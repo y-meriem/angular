@@ -1,0 +1,22 @@
+<div class="disponibilites">
+    <h2>Gestion des disponibilités des professionnels</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Disponibilité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let day of availableDays">
+          <td>{{ day.date }}</td>
+          <td>
+            <button (click)="toggleAvailability(day)">
+              {{ day.available ? 'Disponible' : 'Indisponible' }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

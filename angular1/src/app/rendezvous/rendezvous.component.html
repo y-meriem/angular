@@ -1,0 +1,41 @@
+<div class="rendezvous">
+    <h2>Gestion des rendez-vous</h2>
+  
+    <div>
+      <label for="date">Filtrer par date :</label>
+      <input type="date" id="date" [(ngModel)]="selectedDate">
+  
+      <label for="professional">Filtrer par professionnel :</label>
+      <select id="professional" [(ngModel)]="selectedProfessional">
+        <option value="">Tous</option>
+        <option *ngFor="let professional of professionals" [value]="professional">{{ professional }}</option>
+      </select>
+    </div>
+  
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Heure</th>
+          <th>Professionnel</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of filteredAppointments">
+          <td>{{ appointment.date }}</td>
+          <td>{{ appointment.time }}</td>
+          <td>{{ appointment.professional }}</td>
+          <td>{{ appointment.status }}</td>
+          <td>
+            <button *ngIf="appointment.status === 'en attente'" (click)="bookAppointment(appointment)" [disabled]="appointment.status !== 'en attente'">Réserver</button>
+            <button *ngIf="appointment.status === 'réservé'" (click)="cancelAppointment(appointment, 'client')">Annuler (Client)</button>
+            <button *ngIf="appointment.status === 'réservé'" (click)="cancelAppointment(appointment, 'professional')">Annuler (Professionnel)</button>
+            <button *ngIf="appointment.status === 'réservé'" (click)="confirmAppointment(appointment)">Confirmer (Professionnel)</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
