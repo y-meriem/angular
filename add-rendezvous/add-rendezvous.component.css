@@ -1,0 +1,45 @@
+.add-rendezvous {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.add-rendezvous form div {
+  margin-bottom: 15px;
+}
+
+.add-rendezvous label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.add-rendezvous input,
+.add-rendezvous select,
+.add-rendezvous button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.client-details {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
